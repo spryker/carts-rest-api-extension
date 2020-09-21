@@ -15,7 +15,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
  *
  * Runs before any cart item operation such as update or delete.
  */
-interface QuoteItemCheckerPluginInterface
+interface QuoteItemReadValidatorPluginInterface
 {
     /**
      * Specification:
@@ -28,5 +28,5 @@ interface QuoteItemCheckerPluginInterface
      *
      * @return bool
      */
-    public function checkItemIsInQuote(CartItemRequestTransfer $cartItemRequestTransfer, QuoteTransfer $quoteTransfer): bool;
+    public function validate(CartItemRequestTransfer $cartItemRequestTransfer, QuoteTransfer $quoteTransfer): bool;
 }
